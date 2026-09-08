@@ -1,3 +1,11 @@
-# Arquivo responsável pelo agrupamento das entregas usando K-Means
+# Agrupamento de entregas por região
 
-print("Sistema de clustering preparado!")
+entregas = {
+    "Zona Norte": ["Cliente 1", "Cliente 2"],
+    "Zona Sul": ["Cliente 3"]
+}
+
+print("Agrupamento de entregas realizado com sucesso!")
+
+for zona, clientes in entregas.items():
+    print(f"{zona}: {clientes}")
