@@ -1,18 +1,42 @@
 # Projeto Rota Inteligente
 # Arquivo principal do sistema
 
-print("🚚 Projeto Rota Inteligente")
+from algoritmo_a_estrela import algoritmo_a_estrela
+from clustering import executar_clustering
+
+print("🚚 PROJETO ROTA INTELIGENTE")
 print("Sistema de otimização de rotas de entrega")
-print("----------------------------------------")
+print("=" * 50)
 
-# Executando os módulos do projeto
-print("\n1. Criando representação do grafo...")
-import grafo
+# =====================================
+# PARTE 1 - ALGORITMO A*
+# =====================================
 
-print("\n2. Agrupando entregas por região...")
-import clustering
+print("\n⭐ OTIMIZAÇÃO DE ROTA COM A*")
 
-print("\n3. Executando algoritmo A*...")
-import algoritmo_a_estrela
+inicio = "Restaurante"
+destino = "Perdizes"
 
-print("\n✅ Projeto executado com sucesso!")
+print(f"\n📍 Ponto de partida: {inicio}")
+print(f"🎯 Destino: {destino}")
+
+rota, distancia = algoritmo_a_estrela(inicio, destino)
+
+if rota:
+    print("\n✅ Melhor rota encontrada:")
+    print(" → ".join(rota))
+    print(f"\n📏 Distância total: {distancia} km")
+else:
+    print("\n❌ Não foi possível encontrar uma rota.")
+
+# =====================================
+# PARTE 2 - K-MEANS
+# =====================================
+
+print("\n" + "=" * 50)
+print("📦 AGRUPAMENTO DE ENTREGAS COM K-MEANS")
+print("=" * 50)
+
+executar_clustering()
+
+print("\n🚚 Projeto executado com sucesso!")
